@@ -15,7 +15,6 @@ function App() {
       <Component1/>
       <Component1/>
 
-      <h5>This is react app</h5>
       <h3><Footer/></h3>
     </div>
   );
