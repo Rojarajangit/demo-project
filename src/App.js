@@ -1,4 +1,3 @@
-
 import './App.css';
 import Component from './Component';
 import Component1 from './Component1';
