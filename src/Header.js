@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Header() {
   return (
-    <div><h1>Header</h1></div>
+    <div><h2>Header</h2></div>
   )
 }
