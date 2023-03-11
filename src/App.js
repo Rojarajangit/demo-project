@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       {first}
-    <StateAndProp first={first}Exp={Exp}last={last}/>
+    <StateAndProp first={first}Exp={Exp}/>
     <Second first={first} email={email} Exp={Exp} last={last}/>
       
     </div>
