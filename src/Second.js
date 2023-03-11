@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Second({first,email,Exp}) {
+export default function Second({first,email}) {
   return (
-    <div>Second={first},{email},{Exp}</div>
+    <div>Second={first},{email}</div>
   )
 }
