@@ -18,7 +18,7 @@ function App() {
       {first}
    <StateAndProp first={first}Exp={Exp}last={last}/>
     
-    <Second first={first} email={email} array={array}/>
+    <Second first={first} email={email} array={JSON.stringify(array)}/>
       
     </div>
   );
