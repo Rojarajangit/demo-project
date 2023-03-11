@@ -1,24 +1,49 @@
-import { useState } from 'react'
+import { useState,useEffect }from 'react'
 import './App.css'
-import Second from './Second';
-import StateAndProp from './StateAndProp';
-
-
+import productsData from './products.json'
 
 function App() {
-  const [first, setfirst] = useState('roja')
-  const [email, setemail] = useState("roja@gmail.com")
-  const [Exp, setExp] = useState(10)
-  const [last, setlast] = useState('rajan')
-  const [array, setarray] = useState([1,2,3,4,5])
+  const [textinput, settextinput] = useState('')
+  const [products, setproducts] = useState(productsData)
+
+  useEffect(() => {
+
+  let filteredData=productsData.filter((product)=>
+  product.name.toLowerCase().includes(textinput.toLowerCase())
+  )
+  setproducts(filteredData)
+  }, [textinput])
+  
+  
   return (
     <div className="App">
-
-      <button onClick={() =>setfirst('mini')}>change the name</button>
-      {first}
-   <StateAndProp first={first}Exp={Exp}last={last}/>
-    
-    <Second first={first} email={email} array={JSON.stringify(array)}/>
+      <div>
+      <h1>Music Store</h1>
+       <pre>{JSON.stringify(products,null, 2)}</pre>
+       <input type="text" name="" id=""
+  
+       onChange={(e) => settextinput(e.target.value)}
+       />
+  
+       <h3>This is the input={settextinput}</h3>
+      </div>
+       <div>
+        {products.map((product)=>(
+          <>
+          <h1>{product.name}</h1>
+          <h2>${product.price}</h2>
+          <h2>${product.description}</h2>
+          <img src={product.img} alt=""/>
+          <button onClick={() =>
+                window.open(
+                  `https://web.whatsapp.com/send?phone=8110862228&text=I want to buy ${product.name}`
+                )}>Buy on whatsup</button>
+          <hr/>
+          <hr/>
+          <hr/>
+          </>
+        ))}
+       </div>
       
     </div>
   );
