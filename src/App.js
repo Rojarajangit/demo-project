@@ -13,9 +13,10 @@ function App() {
   const [array, setarray] = useState([1,2,3,4,5])
   return (
     <div className="App">
+
+      <button onClick={() =>setfirst('mini')}>change the name</button>
       {first}
-    
-    <StateAndProp first={first}Exp={Exp}last={last}/>
+   <StateAndProp first={first}Exp={Exp}last={last}/>
     
     <Second first={first} email={email} array={array}/>
       
